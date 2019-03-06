@@ -4,7 +4,27 @@
 
 
 /* LOGIN PAGE */
+<<<<<<< HEAD
 
+form {
+  position: relative;
+  width: 500px;
+  margin: auto;
+}
+
+.floated-label-wrapper {
+  position: relative;
+  margin: auto;
+  width: 200px;
+}
+
+.floated-label-wrapper label {
+
+  background: black;
+  color: #1779ba;
+=======
+
+>>>>>>> 7c0f5799c30f21a9e3a5ae00bb469b1fccfc5c3d
   font-size: 0.75rem;
   font-weight: 600;
   left: 0.75rem;
@@ -32,3 +52,12 @@
   transition: all 0.15s ease-in;
 }
 
+<<<<<<< HEAD
+.uploadImage{
+  position: relative;
+  margin: auto;
+
+}
+
+=======
+>>>>>>> 7c0f5799c30f21a9e3a5ae00bb469b1fccfc5c3d
