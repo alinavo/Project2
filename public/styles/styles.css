@@ -4,6 +4,7 @@
 
 
 /* LOGIN PAGE */
+<<<<<<< HEAD
 
 form {
   position: relative;
@@ -21,6 +22,9 @@ form {
 
   background: black;
   color: #1779ba;
+=======
+
+>>>>>>> 7c0f5799c30f21a9e3a5ae00bb469b1fccfc5c3d
   font-size: 0.75rem;
   font-weight: 600;
   left: 0.75rem;
@@ -48,9 +52,12 @@ form {
   transition: all 0.15s ease-in;
 }
 
+<<<<<<< HEAD
 .uploadImage{
   position: relative;
   margin: auto;
 
 }
 
+=======
+>>>>>>> 7c0f5799c30f21a9e3a5ae00bb469b1fccfc5c3d
