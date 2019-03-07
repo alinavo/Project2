@@ -5,6 +5,7 @@
 
 /* LOGIN PAGE */
 
+
 form {
   position: relative;
   width: 500px;
@@ -21,6 +22,7 @@ form {
 
   background: black;
   color: #1779ba;
+
   font-size: 0.75rem;
   font-weight: 600;
   left: 0.75rem;
@@ -47,6 +49,7 @@ form {
   z-index: 1;
   transition: all 0.15s ease-in;
 }
+
 
 .uploadImage{
   position: relative;

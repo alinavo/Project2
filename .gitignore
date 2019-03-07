@@ -1,7 +1,4 @@
 node_modules
 .DS_Store
-conflict.json 
-<<<<<<< HEAD
-=======
 .env
->>>>>>> 1c2c102391cdaaf3a848ac9230f76d8119fed65d
+
