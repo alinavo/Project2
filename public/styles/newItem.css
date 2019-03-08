@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+  }
+  .form{
+    border-radius:3px;
+    padding:10px 15px;
+    background-color:rgba(0,0,0,0.2);
+  }
+  .input{
+    width:100%;
+    margin-bottom:15px;
+    padding:7px 10px;
+    border-radius:2px;
+    color:#fff;
+    background-color:#554c57;
+    border:none;
+  }
+  .select{
+    width:100%;
+    margin-bottom:15px;
+    padding:7px 10px;
+    border-radius:2px;
+    color:#fff;
+    background-color:#554c57;
+    border:none;
+    height:30px;
+  }
+  .label{
+    width:100%;
+    display:block;
+    font-family:Lucida Sans Unicode, Lucida Grande, sans-serif;
+  }
+  .Submit{
+    width:100%;
+    margin:15px 0;
+    background-color:#785580;
+    border:none;
+    color:#fff;
+    border-radius:2px;
+    padding:7px 10px;
+    font-size:1em;
+    cursor:pointer;
+  }
+  #ivd9xc{
+    padding:10px;
+    font-family:Lucida Sans Unicode, Lucida Grande, sans-serif;
+  }
+  #i5ut4h{
+    padding:10px;
+    font-family:Lucida Sans Unicode, Lucida Grande, sans-serif;
+  }
+  #iv47t2{
+    padding:10px;
+    font-family:Lucida Sans Unicode, Lucida Grande, sans-serif;
+  }
+  #il1eaf{
+    padding:10px;
+    font-family:Lucida Sans Unicode, Lucida Grande, sans-serif;
+  }
+  
