@@ -1,5 +1,14 @@
 module.exports = function(sequelize, DataTypes) {
     var Listing = sequelize.define("Listing", {
+      active_listing: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true
+      },
+      userID: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       post_title: {
         type: DataTypes.STRING,
         allowNull: false,
