@@ -6,7 +6,8 @@ module.exports = function(app) {
     db.Listing.findAll({
       where: {
         active_listing: true,
-      }
+      },
+      include: [db.Users]
     }).then(function(dbListings) {
       res.json(dbListings);
     });
