@@ -45,6 +45,15 @@ module.exports = function(sequelize, DataTypes) {
           type: DataTypes.STRING,
       }
     });
+
+    Listing.associate = function(models) {
+      Listing.belongsTo(models.Users, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
+
     return Listing;
   };
   
