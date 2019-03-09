@@ -5,10 +5,6 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
         defaultValue: true
       },
-      userID: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
       post_title: {
         type: DataTypes.STRING,
         allowNull: false,
