@@ -46,10 +46,40 @@
         <br>
 
 
-        <input class="button" type="submit" value="Join!">
+        <input class="button" id="add-user" type="submit" value="Join!">
 
 
     </form>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery.js"></script>
+
+<!-- JavaScript -->
+<script>
+  // Capture Button Click
+  $("#add-user").on("click", function(event) {
+    // prevent page from refreshing when form tries to submit itself
+    event.preventDefault();
+
+    // Capture user inputs and store them into variables
+    var name = $("#full-name").val().trim();
+    var email = $("#email").val().trim();
+    var password = $("#password").val().trim();
+    var zip = $("#zip").val().trim();
+
+    // Console log each of the user inputs to confirm we are receiving them
+    console.log(name);
+    console.log(email);
+    console.log(password);
+    console.log(zip);
+
+    // Store all content into localStorage
+    localStorage.setItem("name", name);
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
+    localStorage.setItem("zip", zip);
+  });
+
+</script>
 
     <script>
         function previewFile() {
