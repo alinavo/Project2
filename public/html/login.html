@@ -60,61 +60,56 @@
     // prevent page from refreshing when form tries to submit itself
     event.preventDefault();
 
-    // Capture user inputs and store them into variables
-    var name = $("#full-name").val().trim();
-    var email = $("#email").val().trim();
-    var password = $("#password").val().trim();
-    var zip = $("#zip").val().trim();
+    var newUser = {
+        name: $("#full-name").val().trim(),
+        email: $("#email").val().trim(),
+        password: $("#password").val().trim(),
+        location: $("#zip").val().trim()
+    };
 
-    // Console log each of the user inputs to confirm we are receiving them
-    console.log(name);
-    console.log(email);
-    console.log(password);
-    console.log(zip);
+    $.post("/api/new_user", newUser, function(data) {
+        if (data) {
+            console.log("New user created!");
+            // Need to insert route here to redirect to login page
+            // At login page user will now be able to login
+        } else {
+            console.log("Account creation failed.");
+        };
+    });
 
-    // Store all content into localStorage
-    localStorage.setItem("name", name);
-    localStorage.setItem("email", email);
-    localStorage.setItem("password", password);
-    localStorage.setItem("zip", zip);
   });
 
 </script>
 
-    <script>
-        function previewFile() {
-            var preview = document.querySelector('img'); //selects the query named img
-            var file = document.querySelector('input[type=file]').files[0]; //sames as here
-            var reader = new FileReader();
+<script>
+    function previewFile() {
+        var preview = document.querySelector('img'); //selects the query named img
+        var file = document.querySelector('input[type=file]').files[0]; //sames as here
+        var reader = new FileReader();
 
-            reader.onloadend = function () {
-                preview.src = reader.result;
-            }
-
-            if (file) {
-                reader.readAsDataURL(file); //reads the data as a URL
-            } else {
-                preview.src = "";
-            }
+        reader.onloadend = function () {
+            preview.src = reader.result;
         }
 
-        previewFile();  //calls the function named previewFile()
-
-
-
-        function IsValidZipCode(zip) {
-            var isValid = /\d{5}-\d{4}$|^\d{5}$/.test(zip);
-            if (isValid)
-                alert('Valid ZipCode');
-            else {
-                alert('Invalid ZipCode');
-            }
+        if (file) {
+            reader.readAsDataURL(file); //reads the data as a URL
+        } else {
+            preview.src = "";
         }
+    }
 
+    previewFile();  //calls the function named previewFile()
 
+    function IsValidZipCode(zip) {
+        var isValid = /\d{5}-\d{4}$|^\d{5}$/.test(zip);
+        if (isValid)
+            alert('Valid ZipCode');
+        else {
+            alert('Invalid ZipCode');
+        }
+    }
 
-
-    </script>
+</script>
 </body>
 
 
