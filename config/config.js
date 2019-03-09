@@ -1,6 +1,3 @@
-// This allows the whole config to be loaded even though we're not using it in production
-var JAWSDB_URL = process.env.JAWSDB ? JAWSDB_URL : "";
-
 module.exports = {
   development: {
     username: "root",
@@ -20,12 +17,15 @@ module.exports = {
   },
   production: {
     /*
-     * Since one of our properties needs to be snake cased,
-     * we can disable the linting for that specific scenario
-     * and line so that the build doesn't fail for a lint error
+     * Set all of the production environment variables here
+     * No need to add these in your .env files
+     * Go to the heroku user configs inside of settings
+     * Add these values, get them from JAWSDB console page
      */
-    /* eslint-disable-next-line camelcase */
-    use_env_variable: JAWSDB_URL,
+    username: process.env.PROD_DB_USERNAME,
+    password: process.env.PROD_DB_PASSWORD,
+    database: process.env.PROD_DB_DATABASE,
+    host: process.env.PROD_DB_HOST,
     dialect: "mysql"
   }
 };

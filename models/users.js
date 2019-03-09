@@ -49,6 +49,13 @@ module.exports = function (sequelize, DataTypes) {
         type: DataTypes.STRING
       }
       });
+
+      Users.associate = function(models) {
+        Users.hasMany(models.Listing, {
+          onDelete: "cascade"
+        });
+      };
+
     return Users;
   };
   
