@@ -1,6 +1,7 @@
 <!-- Existing Member Signin Page -->
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,26 +10,50 @@
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/styles.css">
 </head>
+
 <body>
-    <form class="callout text-center">
-        <br>
+    <center>
         <h2>Member Login</h2>
-        <br>
-        <br>
-        <!-- Email -->
-        <div class="floated-label-wrapper">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email input" placeholder="Email">
+    </center>
+    <br>
+    <br>
+    <form data-abide novalidate>
+        <div data-abide-error class="alert callout" style="display: none;">
+            <p><i class="fi-alert"></i> There are some errors in your form.</p>
         </div>
-        <br>
-        <!-- Password -->
-        <div class="floated-label-wrapper">
-            <label for="pass">Password</label>
-            <input type="password" id="password" name="password input" placeholder="Password">
+
+        <div class="row">
+            <div class="large-12 columns">
+
+
+                <label>Email
+                    <input type="text" placeholder="abc@email.com" id="email" required pattern="email">
+                    <span class="form-error">* Please enter a valid email</span>
+                </label>
+
+                <label>Password
+                    <input type="text" placeholder="" id="password" required pattern="alpha_numeric">
+                    <span class="form-error">* Required Field</span>
+                </label>
+
+                <!-- Join Button -->
+                <center><input class="button" type="submit" class="newUser" id="newUser" value="Join!"></center>
+
+            </div>
         </div>
-        <br>
-        <!-- Join Button -->
-        <input class="button" type="submit" value="Login!">
     </form>
+
+    <style>
+        form {
+            margin: auto;
+            width: 300px;
+        }
+
+        h2 {
+            padding-top: 200px;
+        }
+    </style>
+
 </body>
+
 </html>
