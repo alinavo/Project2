@@ -29,22 +29,22 @@
         <div class="row">
             <div class="large-4 columns">
                 <label>Full Name
-                    <input type="text" placeholder="" id="data-name" required pattern="[a-zA-Z]+">
+                    <input type="text" placeholder="" id="name" required pattern="[a-zA-Z]+">
                     <span class="form-error">* Required Field</span>
                 </label>
 
                 <label>Email
-                    <input type="text" placeholder="abc@email.com" id="data-input" required pattern="email">
+                    <input type="text" placeholder="abc@email.com" id="email" required pattern="email">
                     <span class="form-error">* Please enter a valid email</span>
                 </label>
 
                 <label>Password
-                    <input type="text" placeholder="" id="data-password" required pattern="alpha_numeric">
+                    <input type="text" placeholder="" id="password" required pattern="alpha_numeric">
                     <span class="form-error">* Required Field</span>
                 </label>
 
                 <label>Zip Code
-                    <input type="text" id="zip" placeholder="00000" id="data-location" required pattern="integer">
+                    <input type="text" id="zip" placeholder="00000" id="location" required pattern="integer">
                     <span class="form-error">* Please enter a valid zip code </span>
                 </label>
 
@@ -57,7 +57,7 @@
         <p class="form-registration-terms"><a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy</a></p>
         <br>
         <!-- Join Button -->
-        <input class="button" type="submit" id="newUser" value="Join!">
+        <input class="button" type="submit" class="newUser" id="newUser" value="Join!">
 
 
     </form>
@@ -84,7 +84,7 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <script>
         // Capture Button Click
-        $("#newUser").on("click", function (event) {
+        $(".newUser").on("click", function (event) {
             // prevent page from refreshing when form tries to submit itself
             event.preventDefault();
 
@@ -92,22 +92,18 @@
             var name = $("#name").val().trim();
             var email = $("#email").val().trim();
             var password = $("#password").val().trim();
-            var zipcode = $("#zip").val().trim();
+            var zipcode = $("#location").val().trim();
 
-            // Console log each of the user inputs to confirm we are receiving them
-            console.log(name);
-            console.log(email);
-            console.log(password);
-            console.log(zipcode);
+            var newUser = {
+                name: name,
+                email: email,
+                password: password,
+                location: zipcode
+            };
 
-            // Clear localStorage
-            localStorage.clear();
-
-            // Store all content into localStorage
-            localStorage.setItem("name", name);
-            localStorage.setItem("email", email);
-            localStorage.setItem("password", password);
-            localStorage.setItem("zipcode", zipcode);
+            $.post("/api/new_user", newUser, function(data) {
+                console.log(data);
+            });
         });
 
     // By default display the content from localStorage
