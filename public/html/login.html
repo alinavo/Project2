@@ -2,115 +2,121 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="../styles/styles.css">
+    <title>PHREEadelphia Member Signup</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.1/dist/css/foundation.min.css"
+        integrity="sha256-1mcRjtAxlSjp6XJBgrBeeCORfBp/ppyX4tsvpQVCcpA= sha384-b5S5X654rX3Wo6z5/hnQ4GBmKuIJKMPwrJXn52ypjztlnDK2w9+9hSMBz/asy9Gw sha512-M1VveR2JGzpgWHb0elGqPTltHK3xbvu3Brgjfg4cg5ZNtyyApxw/45yHYsZ/rCVbfoO5MSZxB241wWq642jLtA=="
+        crossorigin="anonymous">
+
+    <!-- Compressed JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/js/vendor/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.1/dist/js/foundation.min.js"
+        integrity="sha256-WUKHnLrIrx8dew//IpSEmPN/NT3DGAEmIePQYIEJLLs= sha384-53StQWuVbn6figscdDC3xV00aYCPEz3srBdV/QGSXw3f19og3Tq2wTRe0vJqRTEO sha512-X9O+2f1ty1rzBJOC8AXBnuNUdyJg0m8xMKmbt9I3Vu/UOWmSg5zG+dtnje4wAZrKtkopz/PEDClHZ1LXx5IeOw=="
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
-
-    <form class="callout text-center">
-        <h2>Become a Member</h2>
-        <br>
-        <br>
-        <div class="floated-label-wrapper">
-            <label for="full-name">Full name</label>
-            <input type="text" id="full-name" name="full name input" placeholder="Full name">
-        </div>
-        <br>
-        <div class="floated-label-wrapper">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email input" placeholder="Email">
-        </div>
-        <br>
-        <div class="floated-label-wrapper">
-            <label for="pass">Password</label>
-            <input type="password" id="password" name="password input" placeholder="Password">
-        </div>
-        <br>
-        <div class="floated-label-wrapper">
-            <label for="pass">Zip Code</label>
-            <input type="text" id="zip" name="zip" placeholder="Zip Code">
-        </div>
-        <br>
-        <div class="uploadImage">
-            <input type="file" onchange="previewFile()"><br>
-            <img src="" height="200" alt="Image preview...">
+    <center>
+        <h2>Become a Member!</h2>
+    </center>
+    <form data-abide novalidate>
+        <div data-abide-error class="alert callout" style="display: none;">
+            <p><i class="fi-alert"></i> There are some errors in your form.</p>
         </div>
 
-        <br>
-        <br>
+        <div class="row">
+            <div class="large-4 columns">
+                <label>Full Name
+                    <input type="text" placeholder="" id="data-name" required pattern="[a-zA-Z]+">
+                    <span class="form-error">* Required Field</span>
+                </label>
+
+                <label>Email
+                    <input type="text" placeholder="abc@email.com" id="data-input" required pattern="email">
+                    <span class="form-error">* Please enter a valid email</span>
+                </label>
+
+                <label>Password
+                    <input type="text" placeholder="" id="data-password" required pattern="alpha_numeric">
+                    <span class="form-error">* Required Field</span>
+                </label>
+
+                <label>Zip Code
+                    <input type="text" id="zip" placeholder="00000" id="data-location" required pattern="integer">
+                    <span class="form-error">* Please enter a valid zip code </span>
+                </label>
 
 
-        <input class="button" id="add-user" type="submit" value="Join!">
+            </div>
+        </div>
+        <!-- Existing Member Sign-in -->
+        <p class="form-registration-member-signin">Already a member? <a href="./signin.html">Sign in</a></p>
+        <!-- Terms & Privacy -->
+        <p class="form-registration-terms"><a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy</a></p>
+        <br>
+        <!-- Join Button -->
+        <input class="button" type="submit" id="newUser" value="Join!">
 
 
     </form>
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery.js"></script>
 
-<!-- JavaScript -->
-<script>
-  // Capture Button Click
-  $("#add-user").on("click", function(event) {
-    // prevent page from refreshing when form tries to submit itself
-    event.preventDefault();
+    <script>
+        $(document).ready(function () {
+            $(document).foundation();
+        })
 
-    var newUser = {
-        name: $("#full-name").val().trim(),
-        email: $("#email").val().trim(),
-        password: $("#password").val().trim(),
-        location: $("#zip").val().trim()
-    };
+    </script>
 
-    $.post("/api/new_user", newUser, function(data) {
-        if (data) {
-            console.log("New user created!");
-            // Need to insert route here to redirect to login page
-            // At login page user will now be able to login
-        } else {
-            console.log("Account creation failed.");
-        };
-    });
-
-  });
-
-</script>
-
-<script>
-    function previewFile() {
-        var preview = document.querySelector('img'); //selects the query named img
-        var file = document.querySelector('input[type=file]').files[0]; //sames as here
-        var reader = new FileReader();
-
-        reader.onloadend = function () {
-            preview.src = reader.result;
+    <style>
+        form {
+            margin: auto;
+            width: 300px;
         }
 
-        if (file) {
-            reader.readAsDataURL(file); //reads the data as a URL
-        } else {
-            preview.src = "";
+        h2 {
+            padding-top: 200px;
         }
-    }
+    </style>
 
-    previewFile();  //calls the function named previewFile()
 
-    function IsValidZipCode(zip) {
-        var isValid = /\d{5}-\d{4}$|^\d{5}$/.test(zip);
-        if (isValid)
-            alert('Valid ZipCode');
-        else {
-            alert('Invalid ZipCode');
-        }
-    }
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script>
+        // Capture Button Click
+        $("#newUser").on("click", function (event) {
+            // prevent page from refreshing when form tries to submit itself
+            event.preventDefault();
 
-</script>
+            // Capture user inputs and store them into variables
+            var name = $("#name").val().trim();
+            var email = $("#email").val().trim();
+            var password = $("#password").val().trim();
+            var zipcode = $("#zip").val().trim();
+
+            // Console log each of the user inputs to confirm we are receiving them
+            console.log(name);
+            console.log(email);
+            console.log(password);
+            console.log(zipcode);
+
+            // Clear localStorage
+            localStorage.clear();
+
+            // Store all content into localStorage
+            localStorage.setItem("name", name);
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
+            localStorage.setItem("zipcode", zipcode);
+        });
+
+    // By default display the content from localStorage
+    // $("#name-display").text(localStorage.getItem("name"));
+    // $("#email-display").text(localStorage.getItem("email"));
+
+    </script>
+    </script>
+
 </body>
-
 
 </html>
