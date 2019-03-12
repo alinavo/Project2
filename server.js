@@ -12,16 +12,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 
-// Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
-app.set("view engine", "handlebars");
+
 
 // Routes
+require("./routes/htmlRoutes")(app);
 require("./routes/marketplace-api-routes")(app);
 require("./routes/users-api-routes")(app);
 
