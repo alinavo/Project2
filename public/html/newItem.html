@@ -138,30 +138,26 @@
                     var itemCondition = $("select#condition option:checked").val().trim();
                     var itemDescription = $("#description").val().trim();
 
+                    var userID = localStorage.getItem("id");
+
                     var newItem = {
-                        title: itemName,
+                        post_title: itemName,
                         location: itemLocation,
-                        condition: itemCondition,
-                        description: itemDescription
+                        item_condition: itemCondition,
+                        post_body: itemDescription,
+                        UserId: userID,
+                        active_listing: true
                     };
 
                     console.log(newItem);
+                    
 
-
-                   // $.post("/api/list", newItem, function (data) {
-                   //   console.log(data);
-                   //  window.location.href = "/marketplace.html";
-                   // });
+                $.post("/api/list", newItem, function (data) {
+                     console.log(data);
+                     window.location.href = "/marketplace";
+                  });
                 });
-
-
-
-
-
-
-
-
-
+              
             </script>
 
 </body>
