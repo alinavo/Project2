@@ -31,7 +31,7 @@
 
     <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
         <ul class="orbit-container">
-    
+
             <br>
             <br>
             <form class="form">
@@ -41,9 +41,10 @@
                         </b></label>
                     <input id="name" placeholder="Item name" required class="input" />
                 </div>
-                
+                <br>
+                <br>
 
-                
+
 
                 <div class="form-group" class="data-description">
                     <label>
@@ -60,7 +61,7 @@
                 <div class="form-group" id="data-location">
                     <label class="label"><b id="data-location">Location
                         </b></label>
-                    <input type="number" required placeholder="00000" class="input" id="location"/> </div>
+                    <input type="number" required placeholder="00000" class="input" id="location" /> </div>
                 <div class="form-group">
                     <div class="form-group" id="data-condition">
                         <label class="label"><b id="condition">Condition
@@ -86,198 +87,222 @@
                     Fragile?
                     <input type="checkbox" name="Fragile" id="Fragile" class="checkbox" />
 
-                    
 
-                    
+
+
 
                     <div class="form-group" id="submitBtn">
                         <button type="submit" class="button">Submit</button>
                     </div>
             </form>
+    </div>
 
+    <footer>
+        <div class="callout large secondary">
+            <div class="row">
+                <div class="large-6 columns" id="bottomLogo">
+                    <img src="../images/logo.png" height="500" width="500">
+                </div>
+                <div class="large-4 columns">
+                    <h5>Vivamus Hendrerit Arcu Sed Erat Molestie</h5>
+                    <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est
+                        urna sit
+                        amet
+                        arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                        himenaeos. Sed
+                        molestie
+                        augue sit.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
+    <style>
+        body {
+            padding-top: 330px;
+        }
 
-            <style>
-                body {
-                    padding-top: 330px;
+        .sticky-shrinknav-menu {
+            position: absolute;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+            bottom: 0;
+            height: 3.75rem;
+            line-height: 3.75rem;
+            width: 100%;
+            background-color: #0A3558;
+            transition: all 0.5s ease;
+            padding-top: 7px;
+        }
+
+        .sticky-shrinknav-menu li {
+            border-radius: 2px;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .sticky-shrinknav-menu li:hover {
+            box-shadow: 0 0 0 1px #fefefe;
+        }
+
+        .sticky-shrinknav-menu a {
+            color: #fefefe;
+        }
+
+        .sticky-shrinknav-header-title {
+            transition: all 0.3s ease;
+            position: relative;
+            -webkit-transform: translateY(-1.875rem);
+            -ms-transform: translateY(-1.875rem);
+            transform: translateY(-1.875rem);
+            margin-bottom: 0;
+            color: #fefefe;
+        }
+
+        .sticky-shrinknav-header {
+            width: 100%;
+            height: 300px;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            background-color: #D9D9D9;
+
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        body.sticky-shrinknav-wrapper {
+            padding-top: 130px;
+        }
+
+        body.sticky-shrinknav-wrapper .sticky-shrinknav-header {
+            height: 3.75rem;
+            background-color: #0A3558;
+        }
+
+        body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-title {
+            -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+            transform: scale(0);
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: ‘Rubik’, sans-serif;
+        }
+
+        form {
+            color: black;
+            margin: auto;
+            width: 500px;
+            font-family: ‘Rubik’, sans-serif;
+            padding: 50px;
+
+        }
+
+        h1 {
+            padding-top: 100px;
+            font-family: ‘Rubik’, sans-serif;
+        }
+
+        .input {
+            height: 30px;
+            width: 400px;
+        }
+
+        /* takes out scrolling element on number */
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .label {
+            background-color: #0A3558;
+            color: white;
+        }
+
+        .button {
+            background-color: #0A3558;
+            color: white;
+        }
+
+        #bottomLogo {
+            padding-top: 20px;
+
+        }
+    </style>
+
+    <script>
+
+        $(function () {
+            $(window).scroll(function () {
+                var winTop = $(window).scrollTop();
+                if (winTop >= 30) {
+                    $("body").addClass("sticky-shrinknav-wrapper");
+                } else {
+                    $("body").removeClass("sticky-shrinknav-wrapper");
                 }
+            });
+        });
 
-                .sticky-shrinknav-menu {
-                    position: absolute;
-                    left: 50%;
-                    -webkit-transform: translateX(-50%);
-                    -ms-transform: translateX(-50%);
-                    transform: translateX(-50%);
-                    bottom: 0;
-                    height: 3.75rem;
-                    line-height: 3.75rem;
-                    width: 100%;
-                    background-color: #0A3558;
-                    transition: all 0.5s ease;
-                    padding-top: 7px;
-                }
+        $("#submitBtn").on("click", function (event) {
+            event.preventDefault();
+            console.log("hello part 3!")
+            $(document).ready(function () {
+                var itemName = $("#name");
+                console.log(itemName);
 
-                .sticky-shrinknav-menu li {
-                    border-radius: 2px;
-                    margin-top: 10px;
-                    transition: all 0.3s ease;
-                }
-
-                .sticky-shrinknav-menu li:hover {
-                    box-shadow: 0 0 0 1px #fefefe;
-                }
-
-                .sticky-shrinknav-menu a {
-                    color: #fefefe;
-                }
-
-                .sticky-shrinknav-header-title {
-                    transition: all 0.3s ease;
-                    position: relative;
-                    -webkit-transform: translateY(-1.875rem);
-                    -ms-transform: translateY(-1.875rem);
-                    transform: translateY(-1.875rem);
-                    margin-bottom: 0;
-                    color: #fefefe;
-                }
-
-                .sticky-shrinknav-header {
-                    width: 100%;
-                    height: 300px;
-                    display: -webkit-flex;
-                    display: -ms-flexbox;
-                    display: flex;
-                    -webkit-align-items: center;
-                    -ms-flex-align: center;
-                    align-items: center;
-                    -webkit-justify-content: center;
-                    -ms-flex-pack: center;
-                    justify-content: center;
-                    background-color: #D9D9D9;
-
-                    text-align: center;
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    overflow: hidden;
-                    transition: all 0.5s ease;
-                }
-
-                body.sticky-shrinknav-wrapper {
-                    padding-top: 130px;
-                }
-
-                body.sticky-shrinknav-wrapper .sticky-shrinknav-header {
-                    height: 3.75rem;
-                    background-color: #0A3558;
-                }
-
-                body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-title {
-                    -webkit-transform: scale(0);
-                    -ms-transform: scale(0);
-                    transform: scale(0);
-                    transition: all 0.3s ease;
-                }
-
-                body {
-                    font-family: ‘Rubik’, sans-serif;
-                }
-
-                form {
-                    color: black;
-                    margin: auto;
-                    width: 500px;
-                    font-family: ‘Rubik’, sans-serif;
-
-                }
-
-                h1 {
-                    padding-top: 100px;
-                    font-family: ‘Rubik’, sans-serif;
-                }
-
-                .input {
-                    height: 30px;
-                    width: 500px;
-                }
-
-                /* takes out scrolling element on number */
-                input[type=number]::-webkit-inner-spin-button,
-                input[type=number]::-webkit-outer-spin-button {
-                    -webkit-appearance: none;
-                    margin: 0;
-                }
-
-                .label {
-                    background-color: #0A3558;
-                    color: white;
-                }
-                .button {
-                    background-color: #0A3558;
-                    color: white;
-                }
-            </style>
-
-            <script>
+                $(document).foundation();
+            })
 
 
-<<<<<<< Updated upstream
-                $("#submitBtn").on("click", function (event) {
-                    event.preventDefault();
-                    console.log("hello part 3!")
-=======
-                $(document).ready(function () {
-                    var itemName = $("#name");
-                    console.log(itemName);
-
-                    $(document).foundation();
-                })
+            $("#submitBtn").click(function () {
+                console.log(itemName);
+            });
 
 
-                $("#submitBtn").click(function () {
-                    console.log(itemName);
-                });
-
-                $(function () {
-                    $(window).scroll(function () {
-                        var winTop = $(window).scrollTop();
-                        if (winTop >= 30) {
-                            $("body").addClass("sticky-shrinknav-wrapper");
-                        } else {
-                            $("body").removeClass("sticky-shrinknav-wrapper");
-                        }
-                    });
-                });
 
 
->>>>>>> Stashed changes
 
-                    var itemName = $("#name").val().trim();
-                    var itemLocation = $("#location").val().trim();
-                    var itemCondition = $("select#condition option:checked").val().trim();
-                    var itemDescription = $("#description").val().trim();
+            var itemName = $("#name").val().trim();
+            var itemLocation = $("#location").val().trim();
+            var itemCondition = $("select#condition option:checked").val().trim();
+            var itemDescription = $("#description").val().trim();
 
-                    var userID = localStorage.getItem("id");
+            var userID = localStorage.getItem("id");
 
-                    var newItem = {
-                        post_title: itemName,
-                        location: itemLocation,
-                        item_condition: itemCondition,
-                        post_body: itemDescription,
-                        UserId: userID,
-                        active_listing: true
-                    };
+            var newItem = {
+                post_title: itemName,
+                location: itemLocation,
+                item_condition: itemCondition,
+                post_body: itemDescription,
+                UserId: userID,
+                active_listing: true
+            };
 
-                    console.log(newItem);
-                    
+            console.log(newItem);
 
-                $.post("/api/list", newItem, function (data) {
-                     console.log(data);
-                     window.location.href = "/marketplace";
-                  });
-                });
-              
-            </script>
+
+            $.post("/api/list", newItem, function (data) {
+                console.log(data);
+                window.location.href = "/marketplace";
+            });
+        });
+
+    </script>
 
 </body>
 
