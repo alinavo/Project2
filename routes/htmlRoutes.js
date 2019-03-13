@@ -7,7 +7,7 @@ module.exports = function(app) {
 
   // index route loads view.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/html/login.html"));
+    res.sendFile(path.join(__dirname, "../public/html/main.html"));
   });
 
   app.get("/marketplace", function(req, res) {
@@ -20,6 +20,10 @@ module.exports = function(app) {
 
   app.get("/member", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/exisitingMember.html"))
-  })
+  });
+
+  app.get("/login", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/login.html"))
+  });
   
 };
