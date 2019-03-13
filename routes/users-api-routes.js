@@ -14,6 +14,17 @@ module.exports = function(app) {
       });
   });
 
+  // Get back a specific user by email
+  app.get("/api/user_login/:email", function(req, res) {
+    db.Users.findOne({
+      where: {
+        email: req.params.email,
+      }
+    }).then(function(dbUsers) {
+      res.json(dbUsers);
+    });
+  });
+
   // Create a new user account
   app.post("/api/new_user", function(req, res) {
     db.Users.create(req.body).then(function(dbUsers) {
