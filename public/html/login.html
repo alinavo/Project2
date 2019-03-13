@@ -10,6 +10,7 @@
         crossorigin="anonymous">
 
     <!-- Compressed JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/js/vendor/jquery.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.1/dist/js/foundation.min.js"
@@ -22,32 +23,30 @@
         <h2>Become a Member!</h2>
     
     </center>
-    <br>
-    <br>
-    <form data-abide novalidate>
-        <div data-abide-error class="alert callout" style="display: none;">
+    <form>
+        <!-- <div data-abide-error class="alert callout" style="display: none;">
             <p><i class="fi-alert"></i> There are some errors in your form.</p>
-        </div>
+        </div> -->
 
         <div class="row">
             <div class="large-4 columns">
                 <label>Full Name
-                    <input type="text" placeholder="" id="name" required pattern="[a-zA-Z]+">
+                    <input type="text" placeholder="" id="name" required>
                     <span class="form-error">* Required Field</span>
                 </label>
 
                 <label>Email
-                    <input type="text" placeholder="abc@email.com" id="email" required pattern="email">
+                    <input type="text" placeholder="abc@email.com" id="email" required>
                     <span class="form-error">* Please enter a valid email</span>
                 </label>
 
                 <label>Password
-                    <input type="text" placeholder="" id="password" required pattern="alpha_numeric">
+                    <input type="text" placeholder="" id="password" required>
                     <span class="form-error">* Required Field</span>
                 </label>
 
                 <label>Zip Code
-                    <input type="text" id="zip" placeholder="00000" id="location" required pattern="integer">
+                    <input type="text" id="zip" placeholder="00000" id="location" required>
                     <span class="form-error">* Please enter a valid zip code </span>
                 </label>
 
@@ -60,17 +59,10 @@
         <p class="form-registration-terms"><a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy</a></p>
         <br>
         <!-- Join Button -->
-        <center><input class="button" type="submit" class="newUser" id="newUser" value="Join!"></center>
+        <button class="newUser">Join!</button>
 
 
     </form>
-
-    <script>
-        $(document).ready(function () {
-            $(document).foundation();
-        })
-
-    </script>
 
     <style>
         form {
@@ -83,37 +75,40 @@
         }
     </style>
 
+    <script type="text/javascript">
 
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script>
-        // Capture Button Click
-        $(".newUser").on("click", function (event) {
-            // prevent page from refreshing when form tries to submit itself
-            event.preventDefault();
+        console.log('hello!');
 
-            // Capture user inputs and store them into variables
-            var name = $("#name").val().trim();
-            var email = $("#email").val().trim();
-            var password = $("#password").val().trim();
-            var zipcode = $("#location").val().trim();
+        $(document).ready(function(){
 
-            var newUser = {
-                name: name,
-                email: email,
-                password: password,
-                location: zipcode
-            };
+            console.log('hello part 2!');
 
-            $.post("/api/new_user", newUser, function(data) {
-                console.log(data);
+            var nameInput = $("#name");
+            var emailInput = $("#email");
+            var passwordInput = $("#password");
+            var zipcodeInput = $("#zip");
+
+            $(".newUser").on("click", function(event) {
+                event.preventDefault();
+
+                console.log("hello part 3!")
+
+                var newUser = {
+                    name: nameInput.val().trim(),
+                    email: emailInput.val().trim(),
+                    password: passwordInput.val().trim(),
+                    location: zipcodeInput.val().trim()
+                };
+
+                console.log(newUser);
+
+                $.post("/api/new_user", newUser, function(data) {
+                    console.log(data);
+                    window.location.href = "/exisitingMember";
+                });
             });
         });
 
-    // By default display the content from localStorage
-    // $("#name-display").text(localStorage.getItem("name"));
-    // $("#email-display").text(localStorage.getItem("email"));
-
-    </script>
     </script>
 
 </body>
