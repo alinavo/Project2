@@ -8,36 +8,32 @@
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <!-- <link rel="stylesheet" href="newItem.css"> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/js/vendor/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <div class="top-bar">
-        <div class="top-bar-left">
-            <ul class="menu">
-                <li class="menu-text">Phreedelphia</li>
-                <li><a href="#">Marketplace</a></li>
-                <li><a href="#">Add Item</a></li>
+    <header class="sticky-shrinknav-header">
+        <h2 class="sticky-shrinknav-header-title">
+            <img src="../images/PhreedelphiaLogo 2.png" height="500" width="500">
+        </h2>
+        <div class="links">
+            <ul class="menu align-center sticky-shrinknav-menu">
+                <li><a href="#">PHREEDELPHIA</a></li>
+                <li><a href="#">MARKETPLACE</a></li>
+                <li><a href="#">GIVE</a></li>
             </ul>
         </div>
-        <div class="top-bar-right">
-            <ul class="menu">
-                <li><a href="#">My Profile</a></li>
 
-            </ul>
-        </div>
-    </div>
+
+    </header>
 
     <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
         <ul class="orbit-container">
-            <center>
-                <h1>Give Item</h1>
-            </center>
-            
-
-            
-
+    
+            <br>
+            <br>
             <form class="form">
 
                 <div class="form-group" class="data-name">
@@ -102,15 +98,102 @@
 
 
             <style>
+                body {
+                    padding-top: 330px;
+                }
+
+                .sticky-shrinknav-menu {
+                    position: absolute;
+                    left: 50%;
+                    -webkit-transform: translateX(-50%);
+                    -ms-transform: translateX(-50%);
+                    transform: translateX(-50%);
+                    bottom: 0;
+                    height: 3.75rem;
+                    line-height: 3.75rem;
+                    width: 100%;
+                    background-color: #0A3558;
+                    transition: all 0.5s ease;
+                    padding-top: 7px;
+                }
+
+                .sticky-shrinknav-menu li {
+                    border-radius: 2px;
+                    margin-top: 10px;
+                    transition: all 0.3s ease;
+                }
+
+                .sticky-shrinknav-menu li:hover {
+                    box-shadow: 0 0 0 1px #fefefe;
+                }
+
+                .sticky-shrinknav-menu a {
+                    color: #fefefe;
+                }
+
+                .sticky-shrinknav-header-title {
+                    transition: all 0.3s ease;
+                    position: relative;
+                    -webkit-transform: translateY(-1.875rem);
+                    -ms-transform: translateY(-1.875rem);
+                    transform: translateY(-1.875rem);
+                    margin-bottom: 0;
+                    color: #fefefe;
+                }
+
+                .sticky-shrinknav-header {
+                    width: 100%;
+                    height: 300px;
+                    display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-align-items: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    -webkit-justify-content: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    background-color: #D9D9D9;
+
+                    text-align: center;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    overflow: hidden;
+                    transition: all 0.5s ease;
+                }
+
+                body.sticky-shrinknav-wrapper {
+                    padding-top: 130px;
+                }
+
+                body.sticky-shrinknav-wrapper .sticky-shrinknav-header {
+                    height: 3.75rem;
+                    background-color: #0A3558;
+                }
+
+                body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-title {
+                    -webkit-transform: scale(0);
+                    -ms-transform: scale(0);
+                    transform: scale(0);
+                    transition: all 0.3s ease;
+                }
+
+                body {
+                    font-family: ‘Rubik’, sans-serif;
+                }
+
                 form {
                     color: black;
                     margin: auto;
                     width: 500px;
+                    font-family: ‘Rubik’, sans-serif;
 
                 }
 
                 h1 {
                     padding-top: 100px;
+                    font-family: ‘Rubik’, sans-serif;
                 }
 
                 .input {
@@ -124,14 +207,50 @@
                     -webkit-appearance: none;
                     margin: 0;
                 }
+
+                .label {
+                    background-color: #0A3558;
+                    color: white;
+                }
+                .button {
+                    background-color: #0A3558;
+                    color: white;
+                }
             </style>
 
             <script>
 
 
+<<<<<<< Updated upstream
                 $("#submitBtn").on("click", function (event) {
                     event.preventDefault();
                     console.log("hello part 3!")
+=======
+                $(document).ready(function () {
+                    var itemName = $("#name");
+                    console.log(itemName);
+
+                    $(document).foundation();
+                })
+
+
+                $("#submitBtn").click(function () {
+                    console.log(itemName);
+                });
+
+                $(function () {
+                    $(window).scroll(function () {
+                        var winTop = $(window).scrollTop();
+                        if (winTop >= 30) {
+                            $("body").addClass("sticky-shrinknav-wrapper");
+                        } else {
+                            $("body").removeClass("sticky-shrinknav-wrapper");
+                        }
+                    });
+                });
+
+
+>>>>>>> Stashed changes
 
                     var itemName = $("#name").val().trim();
                     var itemLocation = $("#location").val().trim();
