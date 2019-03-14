@@ -16,6 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.1/dist/js/foundation.min.js"
         integrity="sha256-WUKHnLrIrx8dew//IpSEmPN/NT3DGAEmIePQYIEJLLs= sha384-53StQWuVbn6figscdDC3xV00aYCPEz3srBdV/QGSXw3f19og3Tq2wTRe0vJqRTEO sha512-X9O+2f1ty1rzBJOC8AXBnuNUdyJg0m8xMKmbt9I3Vu/UOWmSg5zG+dtnje4wAZrKtkopz/PEDClHZ1LXx5IeOw=="
         crossorigin="anonymous"></script>
+    <script src="../js/userCreate.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -74,42 +75,6 @@
             padding-top: 200px;
         }
     </style>
-
-    <script type="text/javascript">
-
-        console.log('hello!');
-
-        $(document).ready(function(){
-
-            console.log('hello part 2!');
-
-            var nameInput = $("#name");
-            var emailInput = $("#email");
-            var passwordInput = $("#password");
-            var zipcodeInput = $("#zip");
-
-            $(".newUser").on("click", function(event) {
-                event.preventDefault();
-
-                console.log("hello part 3!")
-
-                var newUser = {
-                    name: nameInput.val().trim(),
-                    email: emailInput.val().trim(),
-                    password: passwordInput.val().trim(),
-                    location: zipcodeInput.val().trim()
-                };
-
-                console.log(newUser);
-
-                $.post("/api/new_user", newUser, function(data) {
-                    console.log(data);
-                    window.location.href = "/exisitingMember";
-                });
-            });
-        });
-
-    </script>
 
 </body>
 
