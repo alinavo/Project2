@@ -15,7 +15,7 @@ $(document).ready(function(){
             location: itemLocation.val().trim(),
             item_condition: itemCondition.val().trim(),
             post_body: itemDescription.val().trim(),
-            UserId: userID.val().trim(),
+            UserId: userID.trim(),
             active_listing: true
         };
 
