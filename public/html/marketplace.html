@@ -7,6 +7,7 @@
   <title>Phreedelphia | Welcome</title>
   <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
   <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -39,7 +40,7 @@
     <div class="column">
       <img class="thumbnail" src="https://placehold.it/300x400">
       <h3>Nulla At Nulla Justo, Eget</h3>
-      <button data-addCart class="button button-add-cart"><span>Claim</span></button>
+      <button data-addCart class="button button-add-cart" id="claim"><span>Claim</span></button>
       <div data-successMessage class="callout success hide">
         Claimed!
       </div>
@@ -153,6 +154,41 @@
         $('[data-successMessage]').removeClass('hide')
       }, 2500);
     });
+
+$(document).ready(function(){   
+    $("#claim").on("click", function () {
+      console.log("I've been clicked");
+
+      swal("You've successfully claimed the item. Enter message for giver.", {
+        buttons: {
+          send: "Send Message",
+          none: "No Message"
+        }
+      }).then((value) => {
+
+        console.log(value);
+
+        switch (value) {
+
+          case ("send"):
+            swal("Type a message to the giver.", {
+              content: "input",
+            })
+              .then((value) => {
+                swal(`You typed: ${value}`);
+              });
+            console.log(value);
+            // swal("Success!", "Your Message has been sent.", "success");
+            break;
+
+          case ("none"):
+            swal("Success!", "You have been placed in line for the item!", "success");
+            break;
+
+        }
+      })
+    })
+  });
 
 
   </script>
