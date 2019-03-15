@@ -78,6 +78,7 @@ $(document).ready(function() {
                     buttonTag.addClass("button button-add-cart claimItem");
                     buttonTag.text("Claim!");
                     buttonTag.attr("data-addCart");
+                    buttonTag.attr("id", data[i].id);
                     buttonTag.attr("data-email", data[i].User.email);
                     buttonTag.attr("data-giver", data[i].User.name);
                     buttonTag.attr("data-title", data[i].post_title);
