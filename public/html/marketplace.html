@@ -11,8 +11,6 @@
 </head>
 
 <body>
-
-
   <header class="sticky-shrinknav-header">
     <h1 class="sticky-shrinknav-header-title">
       <img src="../images/PhreedelphiaLogo 2.png" height="500" width="500">
@@ -208,18 +206,22 @@ $(document).ready(function(){
       -ms-transform: translateX(-50%);
       transform: translateX(-50%);
       bottom: 0;
-      height: 3.75rem;
+      height: 4.75rem;
       line-height: 3.75rem;
       width: 100%;
       background-color: #0A3558;
       transition: all 0.5s ease;
       padding-top: 7px;
+      padding-bottom: 7px;
+       
     }
 
     .sticky-shrinknav-menu li {
       border-radius: 2px;
-
+      padding-top: 0px;
+      margin-top: 0px;
       transition: all 0.3s ease;
+   
     }
 
     .sticky-shrinknav-menu li:hover {
@@ -236,7 +238,7 @@ $(document).ready(function(){
       -webkit-transform: translateY(-1.875rem);
       -ms-transform: translateY(-1.875rem);
       transform: translateY(-1.875rem);
-      margin-bottom: 0;
+      
       color: #fefefe;
     }
 
@@ -269,7 +271,9 @@ $(document).ready(function(){
     body.sticky-shrinknav-wrapper .sticky-shrinknav-header {
       height: 3.75rem;
       background-color: #0A3558;
+     
     }
+
 
     body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-title {
       -webkit-transform: scale(0);
@@ -278,6 +282,7 @@ $(document).ready(function(){
       transition: all 0.3s ease;
     }
 
+/* CLAIM BUTTONS */
     .button-add-cart {
       position: relative;
       overflow: hidden;
@@ -390,7 +395,6 @@ $(document).ready(function(){
       display: inline;
       list-style: none;
     }
-
 
     li {
             display: inline-block;

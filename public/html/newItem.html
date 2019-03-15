@@ -15,8 +15,6 @@
 </head>
 
 <body>
-
-
     <header class="sticky-shrinknav-header">
         <h1 class="sticky-shrinknav-header-title">
             <img src="../images/PhreedelphiaLogo 2.png" height="500" width="500">
@@ -47,7 +45,7 @@
                     <input id="name" placeholder="Item name" required class="input" />
                 </div>
                 <br>
-             
+
 
 
 
@@ -124,39 +122,43 @@
     </footer>
 
     <style>
-        body {
-            margin-top: 330px;
-            font-family: 'Abel', sans-serif;
-        }
+ body {
+      margin-top: 330px;
+       font-family: 'Abel', sans-serif;
+    }
 
-        .sticky-shrinknav-menu {
-            position: absolute;
-            left: 50%;
-            -webkit-transform: translateX(-50%);
-            -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
-            bottom: 0;
-            height: 3.75rem;
-            line-height: 3.75rem;
-            width: 100%;
-            background-color: #0A3558;
-            transition: all 0.5s ease;
-            padding-top: 7px;
-        }
+    .sticky-shrinknav-menu {
+      position: absolute;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      bottom: 0;
+      height: 4.75rem;
+      line-height: 3.75rem;
+      width: 100%;
+      background-color: #0A3558;
+      transition: all 0.5s ease;
+      padding-top: 7px;
+      padding-bottom: 7px;
+       
+    }
 
-        .sticky-shrinknav-menu li {
-            border-radius: 2px;
+    .sticky-shrinknav-menu li {
+      border-radius: 2px;
+      padding-top: 0px;
+      margin-top: 0px;
+      transition: all 0.3s ease;
+   
+    }
 
-            transition: all 0.3s ease;
-        }
+    .sticky-shrinknav-menu li:hover {
+      box-shadow: 0 0 0 1px #fefefe;
+    }
 
-        .sticky-shrinknav-menu li:hover {
-            box-shadow: 0 0 0 1px #fefefe;
-        }
-
-        .sticky-shrinknav-menu a {
-            color: #fefefe;
-        }
+    .sticky-shrinknav-menu a {
+      color: #fefefe;
+    }
 
         .sticky-shrinknav-header-title {
             transition: all 0.3s ease;
@@ -253,10 +255,6 @@
 
         }
 
-        #bottomLogo {
-            padding-top: 20px;
-
-        }
 
         .logo {
             display: inline-block;
@@ -273,11 +271,11 @@
         }
 
         .links {
-            display: inline;
-            list-style: none;
-        }
+      display: inline;
+      list-style: none;
+    }
 
-        li {
+    li {
             display: inline-block;
             cursor: pointer;
             float: left;
@@ -289,35 +287,49 @@
             font-size: 20px;
             padding-bottom: 0px;
         }
+    h1{
+      font-family: 'Abel', sans-serif;
+      
+    }
+    h2{
+      font-family: 'Abel', sans-serif;
+    }
 
-        .title {
-            font-family: 'Abel', sans-serif;
-            font-size: 70px;
-            background: -webkit-linear-gradient(#0A3558, red);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    footer {
+      padding-top: 30px;
+   
+    }
+
+   .title {
+    font-family: 'Abel', sans-serif;
+  font-size: 70px;
+  background: -webkit-linear-gradient( #0A3558, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   }
+    
+
     </style>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-    
+
     <script>
 
- 
-            $(document).foundation();
 
- 
-            $(function () {
-                $(window).scroll(function () {
-                    var winTop = $(window).scrollTop();
-                    if (winTop >= 30) {
-                        $("body").addClass("sticky-shrinknav-wrapper");
-                    } else {
-                        $("body").removeClass("sticky-shrinknav-wrapper");
-                    }
-                });
+        $(document).foundation();
+
+
+        $(function () {
+            $(window).scroll(function () {
+                var winTop = $(window).scrollTop();
+                if (winTop >= 30) {
+                    $("body").addClass("sticky-shrinknav-wrapper");
+                } else {
+                    $("body").removeClass("sticky-shrinknav-wrapper");
+                }
             });
+        });
 
 
     </script>
