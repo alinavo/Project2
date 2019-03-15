@@ -19,21 +19,22 @@
     </h1>
     <div class="menu align-center sticky-shrinknav-menu">
       <ul class="links">
-        <li><a href="#">PHREEDELPHIA</a></li>
-        <li><a href="#">MARKETPLACE</a></li>
-        <li><a href="#">GIVE</a></li>
+        <li><a href="./main.html">PHREEDELPHIA</a></li>
+        <li><a href="./marketplace.html">MARKETPLACE</a></li>
+        <li><a href="./newItem.html">GIVE</a></li>
       </ul>
       <div class="logo">
         <h1>"The best things in life are PHREE."</h1>
       </div>
     </div>
-
   </header>
 
   <div class="row column text-center">
     <br>
     <br>
-    <h1>New Listings</h1>
+   <div class="title" >
+    Available Listings
+   </div>
     <hr>
   </div>
   <div class="row small-up-2 large-up-4">
@@ -217,7 +218,7 @@ $(document).ready(function(){
 
     .sticky-shrinknav-menu li {
       border-radius: 2px;
-      margin-top: 10px;
+
       transition: all 0.3s ease;
     }
 
@@ -370,23 +371,15 @@ $(document).ready(function(){
       }
     }
 
-    .button {
-      background-color: #0A3558;
-      color: white;
-      font-weight: bold;
-      display: block;
-      text-align: center;
-      width: 100%;
-
-    }
-
     .logo {
-      display: inline-block;
-      color: white;
-      font-size: 10px;
-      float: right;
-      padding-top: 0px;
-    }
+            display: inline-block;
+            color: white;
+            font-size: 10px;
+            float: right;
+            padding-top: 0px;
+            margin-right: 15px;
+        }
+
 
     #bottomLogo {
       padding-top: 20px;
@@ -398,23 +391,39 @@ $(document).ready(function(){
       list-style: none;
     }
 
-    li {
-      display: inline-block;
-      cursor: pointer;
-      float: left;
-      padding: 10px;
-      margin-left: 0;
-      padding-top: 0;
-    }
 
+    li {
+            display: inline-block;
+            cursor: pointer;
+            float: left;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: 15px;
+            padding-top: 0px;
+            margin-left: 0px;
+            font-size: 20px;
+            padding-bottom: 0px;
+        }
     h1{
       font-family: 'Abel', sans-serif;
+      
     }
     h2{
       font-family: 'Abel', sans-serif;
     }
 
+    footer {
+      padding-top: 30px;
    
+    }
+
+   .title {
+    font-family: 'Abel', sans-serif;
+  font-size: 70px;
+  background: -webkit-linear-gradient( #0A3558, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   }
     
 
   
