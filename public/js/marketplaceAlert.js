@@ -1,31 +1,45 @@
 $(document).on("click", ".claimItem", function () {
     console.log("I've been clicked");
 
-    swal("You've successfully claimed the item. A message has been sent to the owner!", {
-        buttons: {
-            none: "Close"
-        }
-    }).then((value) => {
+    var currentUser = localStorage.getItem('id');
 
-        console.log(value);
+    var queryURL = "/api/users/";
+    queryURL += currentUser;
 
-        switch (value) {
+    // Note that this is referreing to who is receiving the email, not the item!
+    var itemName = $(this).data("title");
+    var recipientEmail = $(this).data("email");
+    var recipientName = $(this).data("giver");
+    var senderName;
+    var senderEmail;
 
-            // case ("send"):
-            //   swal("Type a message to the giver.", {
-            //     content: "input",
-            //   })
-            //     .then((value) => {
-            //       swal(`You typed: ${value}`);
-            //     });
-            //   console.log(value);
-            //   // swal("Success!", "Your Message has been sent.", "success");
-            //   break;
-
-            case ("none"):
-                swal("Success!", "You have been placed in line for the item!", "success");
-                break;
-
+    $.get(queryURL, function(data) {
+        senderName = data.name;
+        senderEmail = data.email;
+    }).then(function() {
+        var data = {
+            service_id: 'gmail',
+            template_id: 'hiking_template',
+            user_id: 'user_ERzl6WhtfmRe34it4avnL',
+            template_params: {
+                'item_name': itemName,
+                'recipient': recipientEmail,
+                'recipient_name': recipientName,
+                'sender': senderEmail,
+                'sender_name': senderName,
+            }
         };
+
+        $.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+            type: 'POST',
+            data: JSON.stringify(data),
+            contentType: 'application/json'
+        }).done(function() {
+            console.log("Email sent!");
+        }).fail(function(error) {
+            alert('Oops... ' + JSON.stringify(error));
+        });        
     });
+
+    swal("Success!", "You've successfully claimed the item. \nA message has been sent to the owner!", "success");
 });
