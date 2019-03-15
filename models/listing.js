@@ -20,10 +20,10 @@ module.exports = function(sequelize, DataTypes) {
           }
       },
       imageURL: {
-          type: DataTypes.STRING,
+          type: DataTypes.TEXT,
           allowNull: true,
           validate: {
-              len: [1, 750]
+              len: [1]
           }
       },
       location: {

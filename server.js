@@ -8,7 +8,7 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
@@ -19,7 +19,7 @@ require("./routes/htmlRoutes")(app);
 require("./routes/marketplace-api-routes")(app);
 require("./routes/users-api-routes")(app);
 
-var syncOptions = { force: false };
+var syncOptions = { force: true };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
