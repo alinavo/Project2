@@ -66,7 +66,7 @@ $(document).ready(function() {
                     var imageTag = $("<img>");
                     imageTag.addClass("thumbnail");
                     imageTag.attr("style", "max-width:250px;");
-                    imageTag.attr("src", "https://cdn2.iconfinder.com/data/icons/generic-06/100/Artboard_5-512.png");
+                    imageTag.attr("src", data[i].imageURL);
                 
                     var headTag = $("<h3>");
                     headTag.text(data[i].post_title);

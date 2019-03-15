@@ -1,4 +1,24 @@
 $(document).ready(function(){
+    
+    var imageURL;
+
+    function readFile() {
+        if (this.files && this.files[0]) {
+
+            var FR = new FileReader();
+
+            FR.addEventListener("load", function (e) {
+                document.getElementById("img").src = e.target.result;
+                imageURL = e.target.result;
+                console.log(imageURL);
+            });
+
+            FR.readAsDataURL(this.files[0]);
+        };
+    };
+
+    document.getElementById("inp").addEventListener("change", readFile);
+
     $("#submitBtn").on("click", function (event) {
         event.preventDefault();
         console.log("hello part 1!");
@@ -15,6 +35,7 @@ $(document).ready(function(){
             location: itemLocation.val().trim(),
             item_condition: itemCondition.val().trim(),
             post_body: itemDescription.val().trim(),
+            imageURL: imageURL,
             UserId: userID.trim(),
             active_listing: true
         };
