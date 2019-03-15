@@ -20,12 +20,21 @@ $(document).ready(function(){
             password: passwordInput.val().trim(),
             location: zipcodeInput.val().trim()
         };
+        
+        var queryURL = "/api/user_login/";
+        queryURL += newUser.email;
 
-        console.log(newUser);
+        $.get(queryURL, function(data) {
+            if (data) {
+                console.log("Sorry, that email is already in use!");
+            } else {
+                console.log(newUser);
 
-        $.post("/api/new_user", newUser, function(data) {
-            console.log(data);
-            window.location.href = "/member";
+                $.post("/api/new_user", newUser, function(data) {
+                    console.log(data);
+                    window.location.href = "/member";
+                });
+            };
         });
     });
 });
