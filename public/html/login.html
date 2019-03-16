@@ -9,7 +9,7 @@
         integrity="sha256-1mcRjtAxlSjp6XJBgrBeeCORfBp/ppyX4tsvpQVCcpA= sha384-b5S5X654rX3Wo6z5/hnQ4GBmKuIJKMPwrJXn52ypjztlnDK2w9+9hSMBz/asy9Gw sha512-M1VveR2JGzpgWHb0elGqPTltHK3xbvu3Brgjfg4cg5ZNtyyApxw/45yHYsZ/rCVbfoO5MSZxB241wWq642jLtA=="
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
-
+    
     <!-- Compressed JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/js/vendor/jquery.min.js"></script>
@@ -21,62 +21,90 @@
 </head>
 
 <body>
-    <div style="text-align:center;" style="display:inline-block;" style="margin:auto;">
-        <img src="../images/PhreedelphiaLogo 2.png" alt="phreedelphia" style="width:500px;height:200px;">
-    </div>
+    <header class="sticky-shrinknav-header">
+        <h1 class="sticky-shrinknav-header-title">
+            <img src="../images/PhreedelphiaLogo 2.png" height="500" width="500">
+        </h1>
+        <div class="menu align-center sticky-shrinknav-menu">
 
-        <div class="modal" id="modal">
-            <center>
-                <h2>Become a Member!</h2>
-            </center>
-            <form>
-                <!-- <div data-abide-error class="alert callout" style="display: none;">
-            <p><i class="fi-alert"></i> There are some errors in your form.</p>
-        </div> -->
-        
-        <div class="row">
-            <div class="large-4 columns">
-                <label>Full Name
-                    <input type="text" placeholder="" id="name" required>
-                    <span class="form-error">* Required Field</span>
-                </label>
+            <div class="logo">
+                <h1>"The best things in life are PHREE."</h1>
+            </div>
+        </div>
+    </header>
 
-                <label>Email
-                    <input type="text" placeholder="abc@email.com" id="email" required>
-                    <span class="form-error">* Please enter a valid email</span>
-                </label>
 
-                <label>Password
-                    <input type="text" placeholder="" id="password" required>
-                    <span class="form-error">* Required Field</span>
-                </label>
 
-                <label>Zip Code
-                    <input type="text" id="zip" placeholder="00000" id="location" required>
-                    <span class="form-error">* Please enter a valid zip code </span>
-                </label>
+
+    <div class="box">
+        <div class="title">
+           <center>Become A Member!</center> 
+        </div>
+        <form>
+
+
+            <br>
+
+            <div class="row">
+                <div class="large-4 columns">
+                        <label>
+                                <label class="label"><b> Full Name
+                                    </b></label>
+                        <input type="text" placeholder="" id="name" required>
+                        <span class="form-error">* Required Field</span></div>
+                        
+                    </label>
+
+                    <label>
+                            <label class="label"><b> Email
+                                </b></label>
+                        <input type="text" placeholder="abc@email.com" id="email" required>
+                        <span class="form-error">* Please enter a valid email</span>
+                    </label>
+
+                    <label>
+                            <label class="label"><b> Password
+                                </b></label>
+                        <input type="text" placeholder="" id="password" required>
+                        <span class="form-error">* Required Field</span>
+                    </label>
+
+                    <label>
+                            <label class="label"><b> Zip Code
+                                </b></label>
+                        <input type="text" id="zip" placeholder="00000" id="location" required>
+                        <span class="form-error">* Please enter a valid zip code </span>
+                    </label>
+
+                </div>
+
+                <!-- Existing Member Sign-in -->
+                <p class="form-registration-member-signin">Already a member? <a href="../html/exisitingMember.html">Sign
+                        in</a>
+                </p>
+                <!-- Terms & Privacy -->
+                <p class="form-registration-terms"><a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy</a>
+                </p>
+                <br>
+                <!-- Join Button Fixed -->
+                <button class="newUser">Join!</button>
 
 
             </div>
-        </div>
-        <!-- Existing Member Sign-in -->
-        <p class="form-registration-member-signin">Already a member? <a href="../html/exisitingMember.html">Sign in</a>
-        </p>
-        <!-- Terms & Privacy -->
-        <p class="form-registration-terms"><a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy</a></p>
-        <br>
-        <!-- Join Button Fixed -->
-        <button class="newUser">Join!</button>
-
-
         </form>
     </div>
-</div>
+
+
+    </div>
+    </div>
 
     <style>
         form {
             margin: auto;
-            /* width: 300px; */
+            width: 300px;
+            font-size: 20px;
+            font-family: 'Abel', sans-serif;
+            padding-bottom: 100px;
         }
 
         h2 {
@@ -90,6 +118,7 @@
 
         body {
             background: #D9D9D9;
+            font-family: 'Abel', sans-serif;
         }
 
         button {
@@ -98,6 +127,7 @@
             font-size: 15px;
             width: 60px;
             height: 50px;
+            font-family: 'Abel', sans-serif;
         }
 
         .modal {
@@ -106,7 +136,133 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
+        .title {
+       
+            font-size: 70px;
+            background: -webkit-linear-gradient(#0A3558, red);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Abel', sans-serif;
+        }
+
+        body {
+            margin-top: 330px;
+            font-family: 'Abel', sans-serif;
+            background-color: white;
+        }
+
+        .sticky-shrinknav-menu {
+            position: absolute;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+            bottom: 0;
+            height: 4.75rem;
+            line-height: 3.75rem;
+            width: 100%;
+            background-color: #0A3558;
+            transition: all 0.5s ease;
+            padding-top: 7px;
+            padding-bottom: 7px;
+
+        }
+
+        .sticky-shrinknav-menu li {
+            border-radius: 2px;
+            padding-top: 0px;
+            margin-top: 0px;
+            transition: all 0.3s ease;
+
+        }
+
+        .sticky-shrinknav-menu li:hover {
+            box-shadow: 0 0 0 1px #fefefe;
+        }
+
+        .sticky-shrinknav-menu a {
+            color: #fefefe;
+        }
+
+        .sticky-shrinknav-header-title {
+            transition: all 0.3s ease;
+            position: relative;
+            -webkit-transform: translateY(-1.875rem);
+            -ms-transform: translateY(-1.875rem);
+            transform: translateY(-1.875rem);
+
+            color: #fefefe;
+        }
+
+        .sticky-shrinknav-header {
+            width: 100%;
+            height: 300px;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            background-color: #D9D9D9;
+
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        body.sticky-shrinknav-wrapper {
+            padding-top: 130px;
+        }
+
+        body.sticky-shrinknav-wrapper .sticky-shrinknav-header {
+            height: 3.75rem;
+            background-color: #0A3558;
+
+        }
+
+
+        body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-title {
+            -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+            transform: scale(0);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            display: inline-block;
+            color: white;
+            font-size: 10px;
+            padding-top: 0px;
+            margin-right: 15px;
+            font-family: 'Abel', sans-serif;
+        }
+
+        .label {
+            background-color: #0A3558;
+            color: white;
+            font-size: 18px;
+           width: 80px;
+        }
+
+        .input {
+            height: 30px;
+            width: 400px;
+            font-size: 20px;
+            color: black;
+        }
+        
+        h1{
+            font-family: 'Abel', sans-serif;
+        }
     </style>
+
 
 </body>
 
