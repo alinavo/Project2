@@ -1,56 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<style>
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <style>
+        #aboutUs {
+            /* border: solid 2px  #0A3558; */
+            /* background-color: white; */
 
-#aboutUs {
-    border: solid 2px blue;
-    background-color: lightblue;
-    border-radius: 25px;
-    width: 80%;
-    margin: auto;
-    text-align: center;
-}
+            margin: 40px;
+            text-align: center;
+        }
 
-#body {
-    background:#D9D9D9;
-}
+        #newExisting {
+            /* border: solid 2px  #0A3558; */
+            /* background-color: white; */
+            margin: auto;
+            text-align: center;
+        }
 
-#newExisting {
-    border: solid 2px blue;
-    background-color: lightblue;
-    border-radius: 25px;
-    width: 80%;
-    margin: auto;
-    text-align: center;
-}
-</style>
+
+        body {
+            margin-top: 330px;
+            font-family: 'Abel', sans-serif;
+        }
+
+        .sticky-shrinknav-menu {
+            position: absolute;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+            bottom: 0;
+            height: 4.75rem;
+            line-height: 3.75rem;
+            width: 100%;
+            background-color: #0A3558;
+            transition: all 0.5s ease;
+            padding-top: 7px;
+            padding-bottom: 7px;
+
+        }
+
+        .sticky-shrinknav-menu li {
+            border-radius: 2px;
+            padding-top: 0px;
+            margin-top: 0px;
+            transition: all 0.3s ease;
+
+        }
+
+        .sticky-shrinknav-menu li:hover {
+            box-shadow: 0 0 0 1px #fefefe;
+        }
+
+        .sticky-shrinknav-menu a {
+            color: #fefefe;
+        }
+
+        .sticky-shrinknav-header-title {
+            transition: all 0.3s ease;
+            position: relative;
+            -webkit-transform: translateY(-1.875rem);
+            -ms-transform: translateY(-1.875rem);
+            transform: translateY(-1.875rem);
+
+            color: #fefefe;
+        }
+
+        .sticky-shrinknav-header {
+            width: 100%;
+            height: 300px;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            background-color: #D9D9D9;
+
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        body.sticky-shrinknav-wrapper {
+            padding-top: 130px;
+        }
+
+        body.sticky-shrinknav-wrapper .sticky-shrinknav-header {
+            height: 3.75rem;
+            background-color: #0A3558;
+
+        }
+
+
+        body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-title {
+            -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+            transform: scale(0);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            display: inline-block;
+            color: white;
+            font-size: 10px;
+
+            padding-top: 0px;
+            margin-right: 15px;
+        }
+
+
+        #bottomLogo {
+            padding-top: 20px;
+
+        }
+        h1{
+            font-family: 'Abel', sans-serif;
+        }
+    </style>
 </head>
-
-<body id="body">
-
-<div style="text-align:center;" style="display:inline-block;" style="margin:auto;">
-<img src="../images/PhreedelphiaLogo 2.png" alt="phreedelphia" style="width:500px;height:200px;">
-</div>
-
-   <br><br><br>
+<br>
 
 
 
-<div id="aboutUs">
-      <h1>Freedelphia is about the ability of our users to be able to access items listed in close proximity to them that others are offering for free because they no longer want or need them. Conversely, it can be used to list products that a user no longer wants as an alternative to paying a trash company to pick it up, thereby saving the item from going to a landfill while also fulfilling a need for another person. <br> Buy Nothing, Waste Nothing!</h1> 
-</div>
+<body>
 
-<br><br><br><br><br>
+    <header class="sticky-shrinknav-header">
+        <h1 class="sticky-shrinknav-header-title">
+            <img src="../images/PhreedelphiaLogo 2.png" height="500" width="500">
+        </h1>
+        <div class="menu align-center sticky-shrinknav-menu">
 
-<div id="newExisting"> 
-    
-<h1>New User? <a href="../html/login.html">Sign Up Here!</a></h1>
+            <div class="logo">
+                <h1>"The best things in life are PHREE."</h1>
+            </div>
+        </div>
+    </header>
+    <div class="box">
 
-<h1>Existing User? <a href="../html/exisitingMember.html">Log in Here!</a></h1>
 
-</div>
+        <br>
+
+
+
+        <div id="aboutUs">
+            <h1>Phreedelphia allows our users to access items listed in close proximity to
+                them that others are offering for free because they no longer want or need them. Conversely, it can be
+                used to list products that a user no longer wants as an alternative to paying a trash company to pick it
+                up, thereby saving the item from going to a landfill while also fulfilling a need for another person.
+                <br>
+                * * *
+                <br>
+                Buy Nothing, Waste Nothing!</h1>
+        </div>
+
+        <br><br <div id="newExisting">
+
+        <center>
+            <h1>New User? <a href="../html/login.html">Sign Up Here!</a></h1>
+
+            <h1>Existing User? <a href="../html/exisitingMember.html">Log in Here!</a></h1>
+        </center>
+
+    </div>
+    </div>
 
 
 </body>
+
 </html>
