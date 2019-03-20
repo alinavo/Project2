@@ -1,5 +1,4 @@
 $(document).on("click", ".claimItem", function () {
-    console.log("I've been clicked");
 
     var currentUser = localStorage.getItem('id');
 
@@ -35,7 +34,7 @@ $(document).on("click", ".claimItem", function () {
             data: JSON.stringify(data),
             contentType: 'application/json'
         }).done(function() {
-            console.log("Email sent!");
+            // console.log("Email sent!");
         }).fail(function(error) {
             alert('Oops... ' + JSON.stringify(error));
         });        

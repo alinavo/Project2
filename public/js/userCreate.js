@@ -1,8 +1,4 @@
-console.log('hello!');
-
 $(document).ready(function(){
-
-    console.log('hello part 2!');
 
     var nameInput = $("#name");
     var emailInput = $("#email");
@@ -11,8 +7,6 @@ $(document).ready(function(){
 
     $(".newUser").on("click", function(event) {
         event.preventDefault();
-
-        console.log("hello part 3!")
 
         var newUser = {
             name: nameInput.val().trim(),
