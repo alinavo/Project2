@@ -21,7 +21,6 @@ $(document).ready(function(){
 
     $("#submitBtn").on("click", function (event) {
         event.preventDefault();
-        console.log("hello part 1!");
 
         var itemName = $("#name");
         var itemLocation = $("#location");
@@ -40,10 +39,7 @@ $(document).ready(function(){
             active_listing: true
         };
 
-        console.log(newItem);
-
         $.post("/api/list", newItem, function (data) {
-            console.log(data);
             window.location.href = "/marketplace";
         });
 
