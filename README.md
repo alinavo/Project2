@@ -10,15 +10,15 @@
     3. Select "Give" in navigation to post item
     4. Select "Claim" on item to contact seller via email.
     
-    ![Login](../images/login.png)
+    ![Login](../public/images/login.png)
  
-    ![Give Item](../images/giveItem.png)
+    ![Give Item](../public/images/giveItem.png)
   
-    ![Available Items](../images/available.png)
+    ![Available Items](../public/images/available.png)
     
     
 ## Demo
-    A demo of Phreedelphia is hosted on [Heroku](https://heroku.com). Click [HERE](https://phreeadelphia.herokuapp.com/)to demo. 
+    A demo of Phreedelphia is hosted on [Heroku](https://www.heroku.com/). Click [HERE](https://phreeadelphia.herokuapp.com/)to demo. 
 
 
 ## Technologies Used
